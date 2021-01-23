@@ -1,10 +1,11 @@
 package pl.coderslab.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 import pl.coderslab.model.Book;
-import pl.coderslab.service.MemoryBookService;
+import pl.coderslab.service.BookService;
 
 import java.util.List;
 
@@ -12,11 +13,11 @@ import java.util.List;
 @RequestMapping("/books")
 public class BookController {
 
-    private final MemoryBookService memoryBookService;
+    private BookService bookService;
 
     @Autowired
-    public BookController(MemoryBookService memoryBookService) {
-        this.memoryBookService = memoryBookService;
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
     }
 
     @RequestMapping("/helloBook")
@@ -24,14 +25,32 @@ public class BookController {
         return new Book(1L, "9788324631766", "Thinking in Java", "Bruce Eckel", "Helion", "programming");
     }
 
-    @GetMapping("/")
+    @GetMapping("")
+    //@ResponseBody
     public List<Book> getBooks() {
-        return memoryBookService.getBooks();
+        return bookService.listBooks();
     }
 
     @GetMapping("/{id}")
     public Book getBook(@PathVariable Long id) {
-        return memoryBookService.getBook(id);
+        return this.bookService.getBook(id).orElseThrow( () -> {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "entity not found");
+        });
+    }
+
+    @PostMapping("")
+    public void addBook(@RequestBody Book book) {
+        bookService.addBook(book);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteBook(@PathVariable Long id) {
+        bookService.deleteBook(id);
+    }
+
+    @PutMapping("")
+    public void updateBook(@RequestBody Book book) {
+        bookService.updateBook(book);
     }
 
 }
