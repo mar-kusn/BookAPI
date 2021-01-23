@@ -1,0 +1,6 @@
+/home/mariusz/_CL/reps/BookAPI/src/main/java/pl/coderslab/model/Book.java
+/home/mariusz/_CL/reps/BookAPI/src/main/java/pl/coderslab/config/AppConfig.java
+/home/mariusz/_CL/reps/BookAPI/src/main/java/pl/coderslab/config/AppInitializer.java
+/home/mariusz/_CL/reps/BookAPI/src/main/java/pl/coderslab/service/BookService.java
+/home/mariusz/_CL/reps/BookAPI/src/main/java/pl/coderslab/controller/BookController.java
+/home/mariusz/_CL/reps/BookAPI/src/main/java/pl/coderslab/service/MemoryBookService.java

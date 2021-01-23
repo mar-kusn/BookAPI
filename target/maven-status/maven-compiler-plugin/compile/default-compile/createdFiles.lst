@@ -1,0 +1,6 @@
+pl/coderslab/config/AppInitializer.class
+pl/coderslab/model/Book.class
+pl/coderslab/service/MemoryBookService.class
+pl/coderslab/config/AppConfig.class
+pl/coderslab/controller/BookController.class
+pl/coderslab/service/BookService.class
