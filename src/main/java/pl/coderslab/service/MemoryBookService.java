@@ -27,6 +27,11 @@ public class MemoryBookService {
 
     // get book by id
     public Book getBook(Long id) {
+        for (Book book : list) {
+            if (book.getId() == id) {
+                return book;
+            }
+        }
         return null;
     }
 
