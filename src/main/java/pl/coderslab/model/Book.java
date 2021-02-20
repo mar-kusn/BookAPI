@@ -1,6 +1,12 @@
 package pl.coderslab.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "books")
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String isbn;
     private String title;
@@ -20,6 +26,7 @@ public class Book {
         this.type = type;
     }
 
+    @Id
     public Long getId() {
         return id;
     }
