@@ -27,7 +27,7 @@ public class BookController {
 
     @GetMapping("")
     public List<Book> getBooks() {
-        return this.bookService.listBooks();
+        return this.bookService.getBooks();
     }
 
     @GetMapping("/{id}")

@@ -39,7 +39,7 @@ public class MemoryBookService implements BookService {
     }
 
     @Override
-    public List<Book> listBooks() {
+    public List<Book> getBooks() {
         return bookList;
     }
 

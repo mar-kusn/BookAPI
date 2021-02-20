@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface BookService {
-    List<Book> listBooks();
+    List<Book> getBooks();
     Optional<Book> getBook(Long id);
     void addBook(Book book);
     Book updateBook(Book book);
