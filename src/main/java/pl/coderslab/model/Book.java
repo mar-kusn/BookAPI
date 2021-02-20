@@ -26,7 +26,6 @@ public class Book {
         this.type = type;
     }
 
-    @Id
     public Long getId() {
         return id;
     }

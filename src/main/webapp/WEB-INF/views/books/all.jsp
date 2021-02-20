@@ -14,11 +14,16 @@
 </head>
 <body>
 
+<h2>Book list</h2>
 <table border="1">
     <thead>
-    <th>isbn</th>
-    <th>title</th>
-    <th>author</th>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Type</th>
+        <th>Publisher</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </thead>
     <tbody>
     <c:forEach items="${books}" var="book">
@@ -26,6 +31,10 @@
             <td><c:out value="${book.isbn}"/></td>
             <td><c:out value="${book.title}"/></td>
             <td><c:out value="${book.author}"/></td>
+            <td><c:out value="${book.type}"/></td>
+            <td><c:out value="${book.publisher}"/></td>
+            <td><a href="/admin/books/edit/${book.id}">Edit</a></td>
+            <td><a href="/admin/books/delete/${book.id}">Delete</a></td>
         </tr>
     </c:forEach>
     </tbody>
