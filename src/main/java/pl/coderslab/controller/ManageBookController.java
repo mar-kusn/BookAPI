@@ -65,9 +65,8 @@ public class ManageBookController {
     @GetMapping("/delete/{bookId}")
     public String delete(@PathVariable Long bookId,  Model model) {
 
-        model.addAttribute("book", bookService.getBook(bookId).orElse(new Book()));// .orElseThrow(EntityNotFoundException::new));
-        //model.addAttribute("book", bookService.getBook(bookId).orElseThrow(EntityNotFoundException::new));
-//        model.addAttribute("book", this.bookService.getBook(bookId));
+//        model.addAttribute("book", bookService.getBook(bookId).orElse(new Book()));
+        model.addAttribute("book", bookService.getBook(bookId).orElseThrow(EntityNotFoundException::new));
 
         return "/books/delete-form";
     }
@@ -85,7 +84,8 @@ public class ManageBookController {
     @GetMapping("/show/{bookId}")
     public String showBook(@PathVariable Long bookId,  Model model) {
 
-        model.addAttribute("book", bookService.getBook(bookId).orElse(new Book()));
+//        model.addAttribute("book", bookService.getBook(bookId).orElse(new Book()));
+        model.addAttribute("book", bookService.getBook(bookId).orElseThrow(EntityNotFoundException::new));
 
         return "/books/show";
     }

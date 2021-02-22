@@ -37,9 +37,10 @@
     </table>
 
     <form:hidden path="id"/>
+    <br />
     <div>
-        <input type="submit" name="deleteBtn" value="no" >No</input>
-        <input type="submit" name="deleteBtn" value="yes" >Yes</input>
+        <input type="submit" name="deleteBtn" value="no" >&nbsp;No</input>
+        <input type="submit" name="deleteBtn" value="yes" >&nbsp;Yes</input>
     </div>
 </form:form>
 
